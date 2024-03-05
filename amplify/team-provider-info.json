@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify18c3ea0ffdda4-staging-193018-authRole",
+      "UnauthRoleArn": "arn:aws:iam::381492205475:role/amplify-amplify18c3ea0ffdda4-staging-193018-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::381492205475:role/amplify-amplify18c3ea0ffdda4-staging-193018-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplify18c3ea0ffdda4-staging-193018-deployment",
+      "UnauthRoleName": "amplify-amplify18c3ea0ffdda4-staging-193018-unauthRole",
+      "StackName": "amplify-amplify18c3ea0ffdda4-staging-193018",
+      "StackId": "arn:aws:cloudformation:us-east-2:381492205475:stack/amplify-amplify18c3ea0ffdda4-staging-193018/ccab1b70-db26-11ee-8205-068d710779d1",
+      "AmplifyAppId": "dzefxyhbvpn1v"
+    },
+    "categories": {
+      "auth": {
+        "vinyldeststudio": {}
+      }
+    }
+  }
+}
