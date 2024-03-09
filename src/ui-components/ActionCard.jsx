@@ -106,7 +106,9 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Information about this product"
+            children={`${"Arist: "}${vinylRecord?.artist}${"   Year: "}${
+              vinylRecord?.year
+            }`}
             {...getOverrideProps(overrides, "Information about this product")}
           ></Text>
         </Flex>
@@ -134,7 +136,7 @@ export default function ActionCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="$99 USD"
+          children={`${"Price: $"}${vinylRecord?.price}`}
           {...getOverrideProps(overrides, "$99 USD")}
         ></Text>
         <Flex

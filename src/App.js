@@ -1,18 +1,28 @@
-// App.js
-import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Amplify from 'aws-amplify';
-import awsconfig from './aws-exports'; // Adjust the path based on your project structure
-import ItemDisplay from './ItemDisplay';
-
-Amplify.configure(awsconfig);
+import Amplify from 'aws-amplify'
+import {
+  ActionCard 
+ } from './ui-components';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Welcome to My DynamoDB Items</h1>
-        <ItemDisplay />
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          <ActionCard />
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn About Keeping Yourself Safe
+        </a>
       </header>
     </div>
   );

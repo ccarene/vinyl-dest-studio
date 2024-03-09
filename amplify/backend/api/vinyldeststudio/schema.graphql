@@ -11,4 +11,5 @@ type VinylRecord @model @auth(rules: [{allow: public}]) {
   year: Int!
   artist: String!
   price: Float!
-} 
+}
+ 
