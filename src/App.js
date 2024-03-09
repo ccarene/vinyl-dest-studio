@@ -19,7 +19,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn About Keeping Yourself Safe
         </a>
       </header>
     </div>
