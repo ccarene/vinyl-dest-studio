@@ -9,7 +9,7 @@ import * as React from "react";
 import { getOverrideProps } from "./utils";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function ActionCard(props) {
-  const { vinylRecord, overrides, ...rest } = props;
+  const { vinylRecord, customer, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -36,6 +36,7 @@ export default function ActionCard(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={vinylRecord?.pictureS3URL}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -112,11 +113,6 @@ export default function ActionCard(props) {
             {...getOverrideProps(overrides, "Information about this product")}
           ></Text>
         </Flex>
-        <Flex
-          width="174px"
-          height="unset"
-          {...getOverrideProps(overrides, "Rating")}
-        ></Flex>
         <Text
           fontFamily="Inter"
           fontSize="20px"
@@ -140,10 +136,41 @@ export default function ActionCard(props) {
           {...getOverrideProps(overrides, "$99 USD")}
         ></Text>
         <Flex
-          width="unset"
+          gap="10px"
+          direction="row"
+          width="284px"
           height="unset"
-          {...getOverrideProps(overrides, "Button")}
-        ></Flex>
+          justifyContent="center"
+          alignItems="center"
+          shrink="0"
+          position="relative"
+          borderRadius="7px"
+          padding="10px 10px 10px 10px"
+          backgroundColor="rgba(147,210,189,1)"
+          {...getOverrideProps(overrides, "Add To Cart Button")}
+        >
+          <Text
+            fontFamily="Inter"
+            fontSize="20px"
+            fontWeight="700"
+            color="rgba(255,255,255,1)"
+            lineHeight="30px"
+            textAlign="left"
+            display="block"
+            direction="column"
+            justifyContent="unset"
+            width="unset"
+            height="unset"
+            gap="unset"
+            alignItems="unset"
+            shrink="0"
+            position="relative"
+            padding="0px 0px 0px 0px"
+            whiteSpace="pre-wrap"
+            children="Add To Cart"
+            {...getOverrideProps(overrides, "Add To Cart")}
+          ></Text>
+        </Flex>
       </Flex>
     </Flex>
   );

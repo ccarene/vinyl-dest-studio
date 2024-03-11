@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { FlexProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -17,21 +17,11 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type ActionCardOverridesProps = {
-    ActionCard?: PrimitiveOverrideProps<FlexProps>;
-    image?: PrimitiveOverrideProps<ImageProps>;
-    "Card Area"?: PrimitiveOverrideProps<FlexProps>;
-    "Main Text"?: PrimitiveOverrideProps<FlexProps>;
-    "Classic Long Sleeve T-Shirt"?: PrimitiveOverrideProps<TextProps>;
-    "Information about this product"?: PrimitiveOverrideProps<TextProps>;
-    "$99 USD"?: PrimitiveOverrideProps<TextProps>;
-    "Add To Cart Button"?: PrimitiveOverrideProps<FlexProps>;
+export declare type AddToCartButtonOverridesProps = {
+    AddToCartButton?: PrimitiveOverrideProps<FlexProps>;
     "Add To Cart"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
-export declare type ActionCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    vinylRecord?: any;
-    customer?: any;
-} & {
-    overrides?: ActionCardOverridesProps | undefined | null;
+export declare type AddToCartButtonProps = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: AddToCartButtonOverridesProps | undefined | null;
 }>;
-export default function ActionCard(props: ActionCardProps): React.ReactElement;
+export default function AddToCartButton(props: AddToCartButtonProps): React.ReactElement;
