@@ -2,7 +2,6 @@ type Customer @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String
   email: String!
-  username: String
 }
 
 type VinylRecord @model @auth(rules: [{allow: public}]) {
@@ -12,6 +11,5 @@ type VinylRecord @model @auth(rules: [{allow: public}]) {
   year: Int!
   artist: String!
   price: Float!
-  pictureS3URL: AWSURL
 }
  

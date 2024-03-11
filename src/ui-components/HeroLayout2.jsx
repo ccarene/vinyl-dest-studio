@@ -38,7 +38,7 @@ export default function HeroLayout2(props) {
           { color: "rgba(188,236,245,1)" },
         "Main Body": {},
         Button: {},
-        "Type Lock Up": { shrink: "1", grow: "1", basis: "0" },
+        "Type Lock Up": {},
         HeroLayout2: { backgroundColor: "rgba(0,64,77,1)" },
       },
       variantValues: { colorMode: "dark" },
@@ -71,7 +71,9 @@ export default function HeroLayout2(props) {
         height="unset"
         justifyContent="center"
         alignItems="center"
-        shrink="0"
+        grow="1"
+        shrink="1"
+        basis="0"
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"

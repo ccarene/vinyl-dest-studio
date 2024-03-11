@@ -5,6 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
+import { VinylRecord } from "../models";
 import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
@@ -24,13 +25,12 @@ export declare type ActionCardOverridesProps = {
     "Main Text"?: PrimitiveOverrideProps<FlexProps>;
     "Classic Long Sleeve T-Shirt"?: PrimitiveOverrideProps<TextProps>;
     "Information about this product"?: PrimitiveOverrideProps<TextProps>;
+    Rating?: PrimitiveOverrideProps<FlexProps>;
     "$99 USD"?: PrimitiveOverrideProps<TextProps>;
-    "Add To Cart Button"?: PrimitiveOverrideProps<FlexProps>;
-    "Add To Cart"?: PrimitiveOverrideProps<TextProps>;
+    Button?: PrimitiveOverrideProps<FlexProps>;
 } & EscapeHatchProps;
 export declare type ActionCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    vinylRecord?: any;
-    customer?: any;
+    vinylRecord?: VinylRecord;
 } & {
     overrides?: ActionCardOverridesProps | undefined | null;
 }>;

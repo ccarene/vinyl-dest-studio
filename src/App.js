@@ -1,16 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
 import Amplify from 'aws-amplify'
-import { LandingPageReal } from "./ui-components"
-import { HeroLayout1 } from "./ui-components"
-import { Desktop1 } from "./ui-components"
-import { Frame438 } from "./ui-components"
+import {
+  ActionCard 
+ } from './ui-components';
 
 function App() {
 
   return (
     <div className="App">
-       <Frame438/>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          <ActionCard />
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn About Keeping Yourself Safe
+        </a>
+      </header>
     </div>
   );
 }
