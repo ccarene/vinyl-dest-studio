@@ -6,7 +6,6 @@
 
 import * as React from "react";
 import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
-import { NavBarProps } from "./NavBar";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -28,7 +27,7 @@ export declare type LandingPageRealOverridesProps = {
     "Sign Up Button"?: PrimitiveOverrideProps<FlexProps>;
     "Sign Up"?: PrimitiveOverrideProps<TextProps>;
     "vinylsimagecrop 2"?: PrimitiveOverrideProps<ImageProps>;
-    NavBar?: NavBarProps;
+    NavBar2?: PrimitiveOverrideProps<FlexProps>;
 } & EscapeHatchProps;
 export declare type LandingPageRealProps = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: LandingPageRealOverridesProps | undefined | null;

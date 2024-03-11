@@ -8,7 +8,6 @@
 import * as React from "react";
 import { getOverrideProps } from "./utils";
 import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
-import NavBar from "./NavBar";
 export default function LandingPageReal(props) {
   const { overrides, ...rest } = props;
   return (
@@ -166,25 +165,11 @@ export default function LandingPageReal(props) {
         src="https://vinyldestination-studio-storage-084f594b160945-staging.s3.us-east-2.amazonaws.com/public/Pics/vinylsimagecrop.jpg"
         {...getOverrideProps(overrides, "vinylsimagecrop 2")}
       ></Image>
-      <NavBar
-        display="flex"
-        gap="801px"
-        direction="row"
+      <Flex
         width="1920px"
         height="105px"
-        justifyContent="flex-start"
-        alignItems="center"
-        overflow="hidden"
-        position="absolute"
-        top="0%"
-        bottom="90.28%"
-        left="0%"
-        right="0%"
-        boxShadow="0px 2px 6px rgba(0.05098039284348488, 0.10196078568696976, 0.14901961386203766, 0.15000000596046448)"
-        padding="16px 32px 16px 32px"
-        backgroundColor="rgba(255,255,255,1)"
-        {...getOverrideProps(overrides, "NavBar")}
-      ></NavBar>
+        {...getOverrideProps(overrides, "NavBar2")}
+      ></Flex>
     </View>
   );
 }

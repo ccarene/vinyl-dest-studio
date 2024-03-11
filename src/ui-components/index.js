@@ -5,10 +5,13 @@
  **************************************************************************/
 
 export { default as ActionCard } from "./ActionCard";
+export { default as ActionCardCollection } from "./ActionCardCollection";
 export { default as AddToCartButton } from "./AddToCartButton";
 export { default as Ampligram } from "./Ampligram";
 export { default as CTASection } from "./CTASection";
+export { default as Checkout } from "./Checkout";
 export { default as CheckoutPayment } from "./CheckoutPayment";
+export { default as CheckoutPaymentInformation } from "./CheckoutPaymentInformation";
 export { default as CommentCard } from "./CommentCard";
 export { default as ContactInfoPage } from "./ContactInfoPage";
 export { default as ContactUs } from "./ContactUs";
@@ -21,6 +24,7 @@ export { default as Features2x2 } from "./Features2x2";
 export { default as Filters } from "./Filters";
 export { default as FormCheckout } from "./FormCheckout";
 export { default as Frame438 } from "./Frame438";
+export { default as Frame439 } from "./Frame439";
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as ItemCard } from "./ItemCard";
 export { default as LandingPage } from "./LandingPage";

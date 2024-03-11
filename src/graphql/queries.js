@@ -7,6 +7,7 @@ export const getCustomer = /* GraphQL */ `
       id
       name
       email
+      username
       createdAt
       updatedAt
       __typename
@@ -24,6 +25,7 @@ export const listCustomers = /* GraphQL */ `
         id
         name
         email
+        username
         createdAt
         updatedAt
         __typename
@@ -42,6 +44,7 @@ export const getVinylRecord = /* GraphQL */ `
       year
       artist
       price
+      pictureS3URL
       createdAt
       updatedAt
       __typename
@@ -62,6 +65,7 @@ export const listVinylRecords = /* GraphQL */ `
         year
         artist
         price
+        pictureS3URL
         createdAt
         updatedAt
         __typename

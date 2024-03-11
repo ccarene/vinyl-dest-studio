@@ -5,8 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { LandingPageRealProps } from "./LandingPageReal";
-import { FlexProps } from "@aws-amplify/ui-react";
+import { ActionCardProps } from "./ActionCard";
+import { CollectionProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -18,11 +18,17 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type Frame438OverridesProps = {
-    Frame438?: PrimitiveOverrideProps<FlexProps>;
-    LandingPageReal?: LandingPageRealProps;
+export declare type ActionCardCollectionOverridesProps = {
+    ActionCardCollection?: PrimitiveOverrideProps<CollectionProps>;
+    ActionCard?: ActionCardProps;
 } & EscapeHatchProps;
-export declare type Frame438Props = React.PropsWithChildren<Partial<FlexProps> & {
-    overrides?: Frame438OverridesProps | undefined | null;
+export declare type ActionCardCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: (collectionItem: {
+        item: any;
+        index: number;
+    }) => ActionCardProps;
+} & {
+    overrides?: ActionCardCollectionOverridesProps | undefined | null;
 }>;
-export default function Frame438(props: Frame438Props): React.ReactElement;
+export default function ActionCardCollection(props: ActionCardCollectionProps): React.ReactElement;

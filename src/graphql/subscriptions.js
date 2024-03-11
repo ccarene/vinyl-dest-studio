@@ -7,6 +7,7 @@ export const onCreateCustomer = /* GraphQL */ `
       id
       name
       email
+      username
       createdAt
       updatedAt
       __typename
@@ -19,6 +20,7 @@ export const onUpdateCustomer = /* GraphQL */ `
       id
       name
       email
+      username
       createdAt
       updatedAt
       __typename
@@ -31,6 +33,7 @@ export const onDeleteCustomer = /* GraphQL */ `
       id
       name
       email
+      username
       createdAt
       updatedAt
       __typename
@@ -48,6 +51,7 @@ export const onCreateVinylRecord = /* GraphQL */ `
       year
       artist
       price
+      pictureS3URL
       createdAt
       updatedAt
       __typename
@@ -65,6 +69,7 @@ export const onUpdateVinylRecord = /* GraphQL */ `
       year
       artist
       price
+      pictureS3URL
       createdAt
       updatedAt
       __typename
@@ -82,6 +87,7 @@ export const onDeleteVinylRecord = /* GraphQL */ `
       year
       artist
       price
+      pictureS3URL
       createdAt
       updatedAt
       __typename

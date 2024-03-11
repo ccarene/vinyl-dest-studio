@@ -8,18 +8,17 @@
 import * as React from "react";
 import { getOverrideProps } from "./utils";
 import LandingPageReal from "./LandingPageReal";
-import { View } from "@aws-amplify/ui-react";
+import { Flex } from "@aws-amplify/ui-react";
 export default function Frame438(props) {
   const { overrides, ...rest } = props;
   return (
-    <View
+    <Flex
+      gap="10px"
+      direction="row"
       width="1920px"
       height="1080px"
-      display="block"
-      gap="unset"
-      alignItems="unset"
-      justifyContent="unset"
-      overflow="hidden"
+      justifyContent="flex-start"
+      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(255,255,255,1)"
@@ -33,12 +32,11 @@ export default function Frame438(props) {
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
-        position="absolute"
-        top="0px"
-        left="0px"
+        shrink="0"
+        position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "LandingPageReal")}
       ></LandingPageReal>
-    </View>
+    </Flex>
   );
 }

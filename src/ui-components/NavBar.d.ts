@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, IconProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -19,16 +19,11 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type NavBarOverridesProps = {
     NavBar?: PrimitiveOverrideProps<FlexProps>;
-    "Frame 5"?: PrimitiveOverrideProps<FlexProps>;
+    "Frame 5"?: PrimitiveOverrideProps<ViewProps>;
     "image 3"?: PrimitiveOverrideProps<ImageProps>;
     Home?: PrimitiveOverrideProps<TextProps>;
     Products?: PrimitiveOverrideProps<TextProps>;
     Contact?: PrimitiveOverrideProps<TextProps>;
-    Vector?: PrimitiveOverrideProps<IconProps>;
-    "Log In Button"?: PrimitiveOverrideProps<FlexProps>;
-    "Log In"?: PrimitiveOverrideProps<TextProps>;
-    "Sign Up Button"?: PrimitiveOverrideProps<FlexProps>;
-    "Sign Up"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type NavBarProps = React.PropsWithChildren<Partial<FlexProps> & {
     overrides?: NavBarOverridesProps | undefined | null;
