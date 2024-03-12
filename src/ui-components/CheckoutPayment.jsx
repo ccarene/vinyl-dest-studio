@@ -214,6 +214,7 @@ export default function CheckoutPayment(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             objectFit="cover"
+            src="https://vinyldestination-studio-storage-084f594b160945-staging.s3.us-east-2.amazonaws.com/public/Pics/vinylLogopng.png"
             {...getOverrideProps(overrides, "image")}
           ></Image>
           <Flex

@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, TextProps } from "@aws-amplify/ui-react";
+import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -19,11 +19,19 @@ export declare type Variant = {
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type ContactInfoPageOverridesProps = {
     ContactInfoPage?: PrimitiveOverrideProps<FlexProps>;
+    Background?: PrimitiveOverrideProps<FlexProps>;
+    "vinylsimage 1"?: PrimitiveOverrideProps<ImageProps>;
+    "Rectangle 1"?: PrimitiveOverrideProps<ViewProps>;
     Left?: PrimitiveOverrideProps<FlexProps>;
-    HeroMessage?: PrimitiveOverrideProps<FlexProps>;
-    Message?: PrimitiveOverrideProps<FlexProps>;
-    Welcome?: PrimitiveOverrideProps<TextProps>;
-    Heading?: PrimitiveOverrideProps<TextProps>;
+    Message124281?: PrimitiveOverrideProps<FlexProps>;
+    Welcome124282?: PrimitiveOverrideProps<TextProps>;
+    Heading124283?: PrimitiveOverrideProps<TextProps>;
+    Message124284?: PrimitiveOverrideProps<FlexProps>;
+    Welcome124285?: PrimitiveOverrideProps<TextProps>;
+    Heading124286?: PrimitiveOverrideProps<TextProps>;
+    Message124287?: PrimitiveOverrideProps<FlexProps>;
+    Welcome124288?: PrimitiveOverrideProps<TextProps>;
+    Heading124289?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type ContactInfoPageProps = React.PropsWithChildren<Partial<FlexProps> & {
     mode?: "Light";

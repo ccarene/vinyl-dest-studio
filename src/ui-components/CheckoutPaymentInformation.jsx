@@ -6,10 +6,24 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useNavigateAction } from "./utils";
+import { generateClient } from "aws-amplify/api";
+import { updateVinylRecord } from "../graphql/mutations";
 import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
+const client = generateClient();
 export default function CheckoutPaymentInformation(props) {
-  const { overrides, ...rest } = props;
+  const { vinylRecord, prop, overrides, ...rest } = props;
+  const buttonOnClick = useNavigateAction({ type: "url", url: "/products" });
+  const labelOneOneThreeEightThreeFiveOnClick = async () => {
+    await client.graphql({
+      query: updateVinylRecord.replaceAll("__typename", ""),
+      variables: {
+        input: {
+          id: vinylRecord?.id,
+        },
+      },
+    });
+  };
   return (
     <Flex
       gap="0"
@@ -165,7 +179,7 @@ export default function CheckoutPaymentInformation(props) {
                     gap="10px"
                     direction="column"
                     width="unset"
-                    height="unset"
+                    height="42px"
                     justifyContent="center"
                     alignItems="center"
                     shrink="0"
@@ -190,7 +204,9 @@ export default function CheckoutPaymentInformation(props) {
                       height="unset"
                       gap="unset"
                       alignItems="unset"
-                      shrink="0"
+                      grow="1"
+                      shrink="1"
+                      basis="0"
                       alignSelf="stretch"
                       position="relative"
                       padding="0px 0px 0px 0px"
@@ -267,7 +283,7 @@ export default function CheckoutPaymentInformation(props) {
                       gap="10px"
                       direction="column"
                       width="unset"
-                      height="unset"
+                      height="42px"
                       justifyContent="center"
                       alignItems="center"
                       shrink="0"
@@ -292,7 +308,9 @@ export default function CheckoutPaymentInformation(props) {
                         height="unset"
                         gap="unset"
                         alignItems="unset"
-                        shrink="0"
+                        grow="1"
+                        shrink="1"
+                        basis="0"
                         alignSelf="stretch"
                         position="relative"
                         padding="0px 0px 0px 0px"
@@ -356,7 +374,7 @@ export default function CheckoutPaymentInformation(props) {
                       gap="10px"
                       direction="column"
                       width="unset"
-                      height="unset"
+                      height="42px"
                       justifyContent="center"
                       alignItems="center"
                       shrink="0"
@@ -381,7 +399,9 @@ export default function CheckoutPaymentInformation(props) {
                         height="unset"
                         gap="unset"
                         alignItems="unset"
-                        shrink="0"
+                        grow="1"
+                        shrink="1"
+                        basis="0"
                         alignSelf="stretch"
                         position="relative"
                         padding="0px 0px 0px 0px"
@@ -390,108 +410,6 @@ export default function CheckoutPaymentInformation(props) {
                         {...getOverrideProps(overrides, "placeholder113824")}
                       ></Text>
                     </Flex>
-                  </Flex>
-                </Flex>
-              </Flex>
-            </Flex>
-            <Flex
-              gap="24px"
-              direction="column"
-              width="unset"
-              height="unset"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-              shrink="0"
-              alignSelf="stretch"
-              position="relative"
-              padding="0px 32px 0px 32px"
-              {...getOverrideProps(overrides, "Frame 410")}
-            >
-              <Flex
-                gap="8px"
-                direction="column"
-                width="unset"
-                height="unset"
-                justifyContent="center"
-                alignItems="flex-start"
-                shrink="0"
-                alignSelf="stretch"
-                position="relative"
-                padding="0px 0px 0px 0px"
-                {...getOverrideProps(overrides, "TextField113826")}
-              >
-                <Text
-                  fontFamily="Inter"
-                  fontSize="16px"
-                  fontWeight="400"
-                  color="rgba(48,64,80,1)"
-                  lineHeight="24px"
-                  textAlign="left"
-                  display="block"
-                  direction="column"
-                  justifyContent="unset"
-                  width="unset"
-                  height="unset"
-                  gap="unset"
-                  alignItems="unset"
-                  shrink="0"
-                  alignSelf="stretch"
-                  position="relative"
-                  padding="0px 0px 0px 0px"
-                  whiteSpace="pre-wrap"
-                  children="Discount code"
-                  {...getOverrideProps(overrides, "label113827")}
-                ></Text>
-                <Flex
-                  gap="0"
-                  direction="column"
-                  width="unset"
-                  height="unset"
-                  justifyContent="flex-start"
-                  alignItems="flex-start"
-                  shrink="0"
-                  alignSelf="stretch"
-                  position="relative"
-                  padding="0px 0px 0px 0px"
-                  {...getOverrideProps(overrides, "InputGroup113829")}
-                >
-                  <Flex
-                    gap="10px"
-                    direction="column"
-                    width="unset"
-                    height="unset"
-                    justifyContent="center"
-                    alignItems="center"
-                    shrink="0"
-                    alignSelf="stretch"
-                    position="relative"
-                    border="1px SOLID rgba(174,179,183,1)"
-                    borderRadius="5px"
-                    padding="8px 16px 8px 16px"
-                    {...getOverrideProps(overrides, "Input113830")}
-                  >
-                    <Text
-                      fontFamily="Inter"
-                      fontSize="16px"
-                      fontWeight="400"
-                      color="rgba(128,128,128,1)"
-                      lineHeight="24px"
-                      textAlign="left"
-                      display="block"
-                      direction="column"
-                      justifyContent="unset"
-                      width="unset"
-                      height="unset"
-                      gap="unset"
-                      alignItems="unset"
-                      shrink="0"
-                      alignSelf="stretch"
-                      position="relative"
-                      padding="0px 0px 0px 0px"
-                      whiteSpace="pre-wrap"
-                      children=""
-                      {...getOverrideProps(overrides, "placeholder113831")}
-                    ></Text>
                   </Flex>
                 </Flex>
               </Flex>
@@ -523,6 +441,9 @@ export default function CheckoutPaymentInformation(props) {
                 borderRadius="4px"
                 padding="7px 15px 7px 15px"
                 backgroundColor="rgba(213,167,78,1)"
+                onClick={() => {
+                  buttonOnClick();
+                }}
                 {...getOverrideProps(overrides, "Button")}
               >
                 <Text
@@ -544,6 +465,9 @@ export default function CheckoutPaymentInformation(props) {
                   padding="0px 0px 0px 0px"
                   whiteSpace="pre-wrap"
                   children="Purchase"
+                  onClick={() => {
+                    labelOneOneThreeEightThreeFiveOnClick();
+                  }}
                   {...getOverrideProps(overrides, "label113835")}
                 ></Text>
               </Flex>
@@ -594,6 +518,7 @@ export default function CheckoutPaymentInformation(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               objectFit="cover"
+              src="https://vinyldestination-studio-storage-084f594b160945-staging.s3.us-east-2.amazonaws.com/public/Pics/vinylLogopng.png"
               {...getOverrideProps(overrides, "image")}
             ></Image>
             <Flex
@@ -650,7 +575,7 @@ export default function CheckoutPaymentInformation(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="$320.00"
+                children="$20.99"
                 {...getOverrideProps(overrides, "$320.00")}
               ></Text>
             </Flex>
@@ -708,66 +633,8 @@ export default function CheckoutPaymentInformation(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="$15.00"
-                {...getOverrideProps(overrides, "$15.00")}
-              ></Text>
-            </Flex>
-            <Flex
-              gap="296px"
-              direction="row"
-              width="unset"
-              height="unset"
-              justifyContent="space-between"
-              alignItems="center"
-              shrink="0"
-              alignSelf="stretch"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              {...getOverrideProps(overrides, "Frame 318")}
-            >
-              <Text
-                fontFamily="Inter"
-                fontSize="16px"
-                fontWeight="400"
-                color="rgba(48,64,80,1)"
-                lineHeight="24px"
-                textAlign="left"
-                display="block"
-                direction="column"
-                justifyContent="unset"
-                letterSpacing="0.01px"
-                width="unset"
-                height="unset"
-                gap="unset"
-                alignItems="unset"
-                shrink="0"
-                position="relative"
-                padding="0px 0px 0px 0px"
-                whiteSpace="pre-wrap"
-                children="Taxes"
-                {...getOverrideProps(overrides, "Taxes")}
-              ></Text>
-              <Text
-                fontFamily="Inter"
-                fontSize="16px"
-                fontWeight="400"
-                color="rgba(13,26,38,1)"
-                lineHeight="24px"
-                textAlign="right"
-                display="block"
-                direction="column"
-                justifyContent="unset"
-                letterSpacing="0.01px"
-                width="unset"
-                height="unset"
-                gap="unset"
-                alignItems="unset"
-                shrink="0"
-                position="relative"
-                padding="0px 0px 0px 0px"
-                whiteSpace="pre-wrap"
-                children="$26.80"
-                {...getOverrideProps(overrides, "$26.80")}
+                children="FREE"
+                {...getOverrideProps(overrides, "FREE")}
               ></Text>
             </Flex>
             <View
@@ -858,7 +725,7 @@ export default function CheckoutPaymentInformation(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="$361.80"
+                children="$20.99"
                 {...getOverrideProps(overrides, "$361.80")}
               ></Text>
             </Flex>

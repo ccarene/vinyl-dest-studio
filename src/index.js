@@ -10,17 +10,22 @@ import { ActionCardCollection } from './ui-components';
 import { Amplify } from 'aws-amplify'
 import awsconfig from "./aws-exports"
 import "@aws-amplify/ui-react"
+import { CustomerCreateForm } from "./ui-components"
+import { CheckoutPaymentInformation } from "./ui-components"
+
 
 Amplify.configure(awsconfig)
+
 
 const router = createBrowserRouter([
    { path: "/", element: <App />},
    { path:"/home", element: <App />},
    { path:"/contact", element: <ContactInfoPage/>},
    { path:"/products", element: <ActionCardCollection/>},
-   { path:"/checkout", element: <CheckoutPayment/>},
-   { path:"/payment", element: <Checkout/>}
+   { path:"/checkout", element: <CustomerCreateForm/>}
 ])
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,3 +41,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

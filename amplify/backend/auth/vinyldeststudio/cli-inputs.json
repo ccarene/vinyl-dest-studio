@@ -3,7 +3,7 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "vinyld866442fb",
+    "resourceNameTruncated": "vinyld1b7858df",
     "userPoolName": "vinyldeststudio",
     "autoVerifiedAttributes": [
       "email"
@@ -32,9 +32,9 @@
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "vinyld866442fb_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "vinyld1b7858df_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "866442fb",
+    "sharedId": "1b7858df",
     "resourceName": "vinyldeststudio",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
@@ -48,21 +48,6 @@
     "thirdPartyAuth": false,
     "authProviders": [],
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true,
-    "authRoleArn": {
-      "Fn::GetAtt": [
-        "AuthRole",
-        "Arn"
-      ]
-    },
-    "unauthRoleArn": {
-      "Fn::GetAtt": [
-        "UnauthRole",
-        "Arn"
-      ]
-    },
-    "breakCircularDependency": true,
-    "dependsOn": [],
-    "hostedUI": false
+    "useEnabledMfas": true
   }
 }

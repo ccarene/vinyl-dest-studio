@@ -10,10 +10,13 @@ import { getOverrideProps, useNavigateAction } from "./utils";
 import { Image, Text, View } from "@aws-amplify/ui-react";
 export default function Frame439(props) {
   const { overrides, ...rest } = props;
-  const viewVinylsOnClick = useNavigateAction({ type: "url", url: "/vinyls" });
+  const viewVinylsOnClick = useNavigateAction({
+    type: "url",
+    url: "/products",
+  });
   return (
     <View
-      width="1920px"
+      width="100%"
       height="1080px"
       display="block"
       gap="unset"
@@ -28,7 +31,7 @@ export default function Frame439(props) {
     >
       <View
         padding="0px 0px 0px 0px"
-        width="1920px"
+        width="100%"
         height="1080px"
         display="block"
         gap="unset"
@@ -40,7 +43,7 @@ export default function Frame439(props) {
         {...getOverrideProps(overrides, "Background")}
       >
         <Image
-          width="1920px"
+          width="100%"
           height="1080px"
           display="block"
           gap="unset"
@@ -55,7 +58,7 @@ export default function Frame439(props) {
           {...getOverrideProps(overrides, "vinylsimage 1")}
         ></Image>
         <View
-          width="1920px"
+          width="100%"
           height="1080px"
           display="block"
           gap="unset"
@@ -71,7 +74,7 @@ export default function Frame439(props) {
       </View>
       <View
         padding="0px 0px 0px 0px"
-        width="1501px"
+        width="100%"
         height="379px"
         display="block"
         gap="unset"

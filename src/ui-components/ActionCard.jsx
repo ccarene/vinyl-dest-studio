@@ -10,10 +10,7 @@ import { getOverrideProps, useNavigateAction } from "./utils";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function ActionCard(props) {
   const { vinylRecord, customer, overrides, ...rest } = props;
-  const addToCartOnClick = useNavigateAction({
-    type: "url",
-    url: `${"/checkout/"}${"payment/"}${vinylRecord?.id}`,
-  });
+  const addToCartOnClick = useNavigateAction({ type: "url", url: "/checkout" });
   return (
     <Flex
       gap="0"
@@ -171,7 +168,7 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Add To Cart"
+            children="Buy Now"
             onClick={() => {
               addToCartOnClick();
             }}

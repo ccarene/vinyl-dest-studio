@@ -25,21 +25,38 @@ export default function CustomerUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
-    name: "",
-    email: "",
-    username: "",
+    FirstName: "",
+    LastName: "",
+    StreetAddress: "",
+    City: "",
+    Zip: "",
+    State: "",
+    Email: "",
+    Number: "",
   };
-  const [name, setName] = React.useState(initialValues.name);
-  const [email, setEmail] = React.useState(initialValues.email);
-  const [username, setUsername] = React.useState(initialValues.username);
+  const [FirstName, setFirstName] = React.useState(initialValues.FirstName);
+  const [LastName, setLastName] = React.useState(initialValues.LastName);
+  const [StreetAddress, setStreetAddress] = React.useState(
+    initialValues.StreetAddress
+  );
+  const [City, setCity] = React.useState(initialValues.City);
+  const [Zip, setZip] = React.useState(initialValues.Zip);
+  const [State, setState] = React.useState(initialValues.State);
+  const [Email, setEmail] = React.useState(initialValues.Email);
+  const [Number, setNumber] = React.useState(initialValues.Number);
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
     const cleanValues = customerRecord
       ? { ...initialValues, ...customerRecord }
       : initialValues;
-    setName(cleanValues.name);
-    setEmail(cleanValues.email);
-    setUsername(cleanValues.username);
+    setFirstName(cleanValues.FirstName);
+    setLastName(cleanValues.LastName);
+    setStreetAddress(cleanValues.StreetAddress);
+    setCity(cleanValues.City);
+    setZip(cleanValues.Zip);
+    setState(cleanValues.State);
+    setEmail(cleanValues.Email);
+    setNumber(cleanValues.Number);
     setErrors({});
   };
   const [customerRecord, setCustomerRecord] = React.useState(customerModelProp);
@@ -59,9 +76,14 @@ export default function CustomerUpdateForm(props) {
   }, [idProp, customerModelProp]);
   React.useEffect(resetStateValues, [customerRecord]);
   const validations = {
-    name: [],
-    email: [{ type: "Required" }],
-    username: [],
+    FirstName: [],
+    LastName: [],
+    StreetAddress: [],
+    City: [],
+    Zip: [],
+    State: [],
+    Email: [],
+    Number: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -89,9 +111,14 @@ export default function CustomerUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
-          name: name ?? null,
-          email,
-          username: username ?? null,
+          FirstName: FirstName ?? null,
+          LastName: LastName ?? null,
+          StreetAddress: StreetAddress ?? null,
+          City: City ?? null,
+          Zip: Zip ?? null,
+          State: State ?? null,
+          Email: Email ?? null,
+          Number: Number ?? null,
         };
         const validationResponses = await Promise.all(
           Object.keys(validations).reduce((promises, fieldName) => {
@@ -144,82 +171,252 @@ export default function CustomerUpdateForm(props) {
       {...rest}
     >
       <TextField
-        label="Name"
+        label="First name"
         isRequired={false}
         isReadOnly={false}
-        value={name}
+        value={FirstName}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              name: value,
-              email,
-              username,
+              FirstName: value,
+              LastName,
+              StreetAddress,
+              City,
+              Zip,
+              State,
+              Email,
+              Number,
             };
             const result = onChange(modelFields);
-            value = result?.name ?? value;
+            value = result?.FirstName ?? value;
           }
-          if (errors.name?.hasError) {
-            runValidationTasks("name", value);
+          if (errors.FirstName?.hasError) {
+            runValidationTasks("FirstName", value);
           }
-          setName(value);
+          setFirstName(value);
         }}
-        onBlur={() => runValidationTasks("name", name)}
-        errorMessage={errors.name?.errorMessage}
-        hasError={errors.name?.hasError}
-        {...getOverrideProps(overrides, "name")}
+        onBlur={() => runValidationTasks("FirstName", FirstName)}
+        errorMessage={errors.FirstName?.errorMessage}
+        hasError={errors.FirstName?.hasError}
+        {...getOverrideProps(overrides, "FirstName")}
+      ></TextField>
+      <TextField
+        label="Last name"
+        isRequired={false}
+        isReadOnly={false}
+        value={LastName}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              FirstName,
+              LastName: value,
+              StreetAddress,
+              City,
+              Zip,
+              State,
+              Email,
+              Number,
+            };
+            const result = onChange(modelFields);
+            value = result?.LastName ?? value;
+          }
+          if (errors.LastName?.hasError) {
+            runValidationTasks("LastName", value);
+          }
+          setLastName(value);
+        }}
+        onBlur={() => runValidationTasks("LastName", LastName)}
+        errorMessage={errors.LastName?.errorMessage}
+        hasError={errors.LastName?.hasError}
+        {...getOverrideProps(overrides, "LastName")}
+      ></TextField>
+      <TextField
+        label="Street address"
+        isRequired={false}
+        isReadOnly={false}
+        value={StreetAddress}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              FirstName,
+              LastName,
+              StreetAddress: value,
+              City,
+              Zip,
+              State,
+              Email,
+              Number,
+            };
+            const result = onChange(modelFields);
+            value = result?.StreetAddress ?? value;
+          }
+          if (errors.StreetAddress?.hasError) {
+            runValidationTasks("StreetAddress", value);
+          }
+          setStreetAddress(value);
+        }}
+        onBlur={() => runValidationTasks("StreetAddress", StreetAddress)}
+        errorMessage={errors.StreetAddress?.errorMessage}
+        hasError={errors.StreetAddress?.hasError}
+        {...getOverrideProps(overrides, "StreetAddress")}
+      ></TextField>
+      <TextField
+        label="City"
+        isRequired={false}
+        isReadOnly={false}
+        value={City}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              FirstName,
+              LastName,
+              StreetAddress,
+              City: value,
+              Zip,
+              State,
+              Email,
+              Number,
+            };
+            const result = onChange(modelFields);
+            value = result?.City ?? value;
+          }
+          if (errors.City?.hasError) {
+            runValidationTasks("City", value);
+          }
+          setCity(value);
+        }}
+        onBlur={() => runValidationTasks("City", City)}
+        errorMessage={errors.City?.errorMessage}
+        hasError={errors.City?.hasError}
+        {...getOverrideProps(overrides, "City")}
+      ></TextField>
+      <TextField
+        label="Zip"
+        isRequired={false}
+        isReadOnly={false}
+        value={Zip}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              FirstName,
+              LastName,
+              StreetAddress,
+              City,
+              Zip: value,
+              State,
+              Email,
+              Number,
+            };
+            const result = onChange(modelFields);
+            value = result?.Zip ?? value;
+          }
+          if (errors.Zip?.hasError) {
+            runValidationTasks("Zip", value);
+          }
+          setZip(value);
+        }}
+        onBlur={() => runValidationTasks("Zip", Zip)}
+        errorMessage={errors.Zip?.errorMessage}
+        hasError={errors.Zip?.hasError}
+        {...getOverrideProps(overrides, "Zip")}
+      ></TextField>
+      <TextField
+        label="State"
+        isRequired={false}
+        isReadOnly={false}
+        value={State}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              FirstName,
+              LastName,
+              StreetAddress,
+              City,
+              Zip,
+              State: value,
+              Email,
+              Number,
+            };
+            const result = onChange(modelFields);
+            value = result?.State ?? value;
+          }
+          if (errors.State?.hasError) {
+            runValidationTasks("State", value);
+          }
+          setState(value);
+        }}
+        onBlur={() => runValidationTasks("State", State)}
+        errorMessage={errors.State?.errorMessage}
+        hasError={errors.State?.hasError}
+        {...getOverrideProps(overrides, "State")}
       ></TextField>
       <TextField
         label="Email"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
-        value={email}
+        value={Email}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              name,
-              email: value,
-              username,
+              FirstName,
+              LastName,
+              StreetAddress,
+              City,
+              Zip,
+              State,
+              Email: value,
+              Number,
             };
             const result = onChange(modelFields);
-            value = result?.email ?? value;
+            value = result?.Email ?? value;
           }
-          if (errors.email?.hasError) {
-            runValidationTasks("email", value);
+          if (errors.Email?.hasError) {
+            runValidationTasks("Email", value);
           }
           setEmail(value);
         }}
-        onBlur={() => runValidationTasks("email", email)}
-        errorMessage={errors.email?.errorMessage}
-        hasError={errors.email?.hasError}
-        {...getOverrideProps(overrides, "email")}
+        onBlur={() => runValidationTasks("Email", Email)}
+        errorMessage={errors.Email?.errorMessage}
+        hasError={errors.Email?.hasError}
+        {...getOverrideProps(overrides, "Email")}
       ></TextField>
       <TextField
-        label="Username"
+        label="Number"
         isRequired={false}
         isReadOnly={false}
-        value={username}
+        value={Number}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
-              name,
-              email,
-              username: value,
+              FirstName,
+              LastName,
+              StreetAddress,
+              City,
+              Zip,
+              State,
+              Email,
+              Number: value,
             };
             const result = onChange(modelFields);
-            value = result?.username ?? value;
+            value = result?.Number ?? value;
           }
-          if (errors.username?.hasError) {
-            runValidationTasks("username", value);
+          if (errors.Number?.hasError) {
+            runValidationTasks("Number", value);
           }
-          setUsername(value);
+          setNumber(value);
         }}
-        onBlur={() => runValidationTasks("username", username)}
-        errorMessage={errors.username?.errorMessage}
-        hasError={errors.username?.hasError}
-        {...getOverrideProps(overrides, "username")}
+        onBlur={() => runValidationTasks("Number", Number)}
+        errorMessage={errors.Number?.errorMessage}
+        hasError={errors.Number?.hasError}
+        {...getOverrideProps(overrides, "Number")}
       ></TextField>
       <Flex
         justifyContent="space-between"

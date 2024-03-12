@@ -19,7 +19,7 @@ export default function NavBar(props) {
       gap="801px"
       direction="row"
       width="1508px"
-      height="unset"
+      height="5rem"
       justifyContent="flex-start"
       alignItems="center"
       overflow="hidden"

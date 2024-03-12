@@ -41,12 +41,6 @@ export declare type CheckoutPaymentInformationOverridesProps = {
     InputGroup113822?: PrimitiveOverrideProps<FlexProps>;
     Input113823?: PrimitiveOverrideProps<FlexProps>;
     placeholder113824?: PrimitiveOverrideProps<TextProps>;
-    "Frame 410"?: PrimitiveOverrideProps<FlexProps>;
-    TextField113826?: PrimitiveOverrideProps<FlexProps>;
-    label113827?: PrimitiveOverrideProps<TextProps>;
-    InputGroup113829?: PrimitiveOverrideProps<FlexProps>;
-    Input113830?: PrimitiveOverrideProps<FlexProps>;
-    placeholder113831?: PrimitiveOverrideProps<TextProps>;
     "Frame 411113759"?: PrimitiveOverrideProps<FlexProps>;
     Button?: PrimitiveOverrideProps<FlexProps>;
     label113835?: PrimitiveOverrideProps<TextProps>;
@@ -58,10 +52,7 @@ export declare type CheckoutPaymentInformationOverridesProps = {
     "$320.00"?: PrimitiveOverrideProps<TextProps>;
     "Frame 317"?: PrimitiveOverrideProps<FlexProps>;
     Shipping?: PrimitiveOverrideProps<TextProps>;
-    "$15.00"?: PrimitiveOverrideProps<TextProps>;
-    "Frame 318"?: PrimitiveOverrideProps<FlexProps>;
-    Taxes?: PrimitiveOverrideProps<TextProps>;
-    "$26.80"?: PrimitiveOverrideProps<TextProps>;
+    FREE?: PrimitiveOverrideProps<TextProps>;
     Divider?: PrimitiveOverrideProps<ViewProps>;
     "Line 1"?: PrimitiveOverrideProps<IconProps>;
     "Frame 319"?: PrimitiveOverrideProps<FlexProps>;
@@ -69,6 +60,9 @@ export declare type CheckoutPaymentInformationOverridesProps = {
     "$361.80"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type CheckoutPaymentInformationProps = React.PropsWithChildren<Partial<FlexProps> & {
+    vinylRecord?: any;
+    prop?: any;
+} & {
     overrides?: CheckoutPaymentInformationOverridesProps | undefined | null;
 }>;
 export default function CheckoutPaymentInformation(props: CheckoutPaymentInformationProps): React.ReactElement;

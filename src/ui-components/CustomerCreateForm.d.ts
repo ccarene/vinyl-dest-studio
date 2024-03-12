@@ -22,21 +22,38 @@ export declare type ValidationResponse = {
 };
 export declare type ValidationFunction<T> = (value: T, validationResponse: ValidationResponse) => ValidationResponse | Promise<ValidationResponse>;
 export declare type CustomerCreateFormInputValues = {
-    name?: string;
-    email?: string;
-    username?: string;
+    FirstName?: string;
+    LastName?: string;
+    StreetAddress?: string;
+    City?: string;
+    Zip?: string;
+    State?: string;
+    Email?: string;
+    Number?: string;
 };
 export declare type CustomerCreateFormValidationValues = {
-    name?: ValidationFunction<string>;
-    email?: ValidationFunction<string>;
-    username?: ValidationFunction<string>;
+    FirstName?: ValidationFunction<string>;
+    LastName?: ValidationFunction<string>;
+    StreetAddress?: ValidationFunction<string>;
+    City?: ValidationFunction<string>;
+    Zip?: ValidationFunction<string>;
+    State?: ValidationFunction<string>;
+    Email?: ValidationFunction<string>;
+    Number?: ValidationFunction<string>;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type CustomerCreateFormOverridesProps = {
     CustomerCreateFormGrid?: PrimitiveOverrideProps<GridProps>;
-    name?: PrimitiveOverrideProps<TextFieldProps>;
-    email?: PrimitiveOverrideProps<TextFieldProps>;
-    username?: PrimitiveOverrideProps<TextFieldProps>;
+    RowGrid0?: PrimitiveOverrideProps<GridProps>;
+    FirstName?: PrimitiveOverrideProps<TextFieldProps>;
+    LastName?: PrimitiveOverrideProps<TextFieldProps>;
+    StreetAddress?: PrimitiveOverrideProps<TextFieldProps>;
+    RowGrid2?: PrimitiveOverrideProps<GridProps>;
+    City?: PrimitiveOverrideProps<TextFieldProps>;
+    Zip?: PrimitiveOverrideProps<TextFieldProps>;
+    State?: PrimitiveOverrideProps<TextFieldProps>;
+    Email?: PrimitiveOverrideProps<TextFieldProps>;
+    Number?: PrimitiveOverrideProps<TextFieldProps>;
 } & EscapeHatchProps;
 export declare type CustomerCreateFormProps = React.PropsWithChildren<{
     overrides?: CustomerCreateFormOverridesProps | undefined | null;
