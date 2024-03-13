@@ -121,6 +121,7 @@ export default function CustomerCreateForm(props) {
         if (onSubmit) {
           modelFields = onSubmit(modelFields);
         }
+        window.location.href = "./products"
         try {
           Object.entries(modelFields).forEach(([key, value]) => {
             if (typeof value === "string" && value === "") {
@@ -141,7 +142,6 @@ export default function CustomerCreateForm(props) {
           if (clearOnSuccess) {
             resetStateValues();
           }
-          window.location.href = "./products"
         } catch (err) {
           if (onError) {
             const messages = err.errors.map((e) => e.message).join("\n");
