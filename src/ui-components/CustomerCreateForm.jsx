@@ -1,6 +1,6 @@
 /***************************************************************************
  * The contents of this file were generated with Amplify Studio.           *
- * Please refrain from making any modifications to this file.              *
+ * Please refrain from making any modifications to this file.        c      *
  * Any changes to this file will be overwritten when running amplify pull. *
  **************************************************************************/
 
